@@ -1,0 +1,117 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: Poppins;
+}
+.main_box{
+    background-image: url(photo.jpg);
+    height:100vh; /*u can use 100vh if u want to set image to entire page*/
+
+}
+.btn_one i{
+     color: white;
+     font-size: 30px;
+     font-weight:700 ;
+     position:absolute;
+     left:16px;
+     line-height: 60px;
+}
+.sidebar_menu{
+    position:fixed;
+   /*  left:-350px;when we set left position to be -350px it will move left so much that sidebar menu will go out of the screen when we click hamburger menu the sidebar menu opens and this is what we want to achieve*/
+height: 100vh;
+width: 300px;
+background-color: rgba(255,255,255,0.1);
+box-shadow:0 0 6px rgba(255,255,255,0.5);
+transition: all 0.2s linear;/* sidebar menu comes linearly from side*/
+}
+.sidebar_menu .logo{
+    position:absolute;
+    width:100%;
+    line-height:60px;
+    box-shadow: 0 2px 4px rgba(255,255,255,0.5);
+    height:60px;
+}
+/*trying to style apna college <a> tag*/
+.sidebar_menu .logo a{
+    position: absolute;
+    left: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+/*trying to set white color to menu icons*/
+.sidebar_menu .menu{
+    position:absolute ;
+    width: 100%;
+    top:80px;
+}
+.sidebar_menu .btn_two{ /*cross symbol*/ 
+    color: gray;
+    font-size: 25px;
+    line-height: 60px;
+    /*to shift cross to right*/
+    position: absolute;
+    left: 275px;
+    cursor:pointer;/*cursor shape is set to hand*/
+}
+.sidebar_menu .menu li{
+    margin-top:6px;
+    padding: 14px 20px;/*left and right position is set for menus*/
+}
+.sidebar_menu .menu i,a{
+    color:white;
+    text-decoration: none;
+    font-size: 20px;
+}
+/*give distance between menu name like gallery and its icon*/
+.sidebar_menu.menu i{
+    padding-right: 8px;
+}
+.sidebar_menu .social_media{
+    color: white;
+    opacity: 0.5;/* gray */
+    position: absolute;
+    left: 25%;
+    bottom:20px;
+}
+.sidebar_menu .social_media i{
+    color: white;
+    opacity: 0.5;
+    padding:0 5px;
+
+}
+#check{
+    display:none;
+    /* checkbox disappears*/
+}
+/*start setting effects for hover etc*/
+.sidebar_menu .menu li:hover{
+    box-shadow:0 0 4px rgba(255,255,255,0.5);
+}
+.btn_one i:hover{
+    font-size: 40px;
+    transition: all 0.3s linear;/* sidebar menu comes linearly from side*/
+}
+
+.btn_two i:hover{
+    font-size: 30px;
+    transition: all 0.3s linear;/* sidebar menu comes linearly from side*/
+}
+
+.sidebar_menu .social_media i:hover{
+    opacity: 1;
+    transform: scale(1.1);
+}
+#check:checked ~.sidebar_menu{
+left:0;/* when checkbox is checked sidebarmenu appears so make left=0*/
+
+}
+#check:checked ~.btn_one i{
+    opacity:0;/*disppear ham menu when sidebar opens*/
+
+}
+#check:checked ~.sidebar_menu .btn_two i{
+    opacity: 1;/*cross appears*/
+}
